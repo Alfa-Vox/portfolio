@@ -1,12 +1,6 @@
  // Initialize Firebase
     const firebaseConfig = {
-      apiKey: "AIzaSyDEj38aSEXvWivHOr_J-28mQziW3L56y6Q",
-      authDomain: "alfa-vox-portfolio.firebaseapp.com",
-      projectId: "alfa-vox-portfolio",
-      storageBucket: "alfa-vox-portfolio.appspot.com",
-      messagingSenderId: "326170168205",
-      appId: "1:326170168205:web:4c68b1b06ca6753808cbc4",
-      measurementId: "G-37ZVK4BRY4"
+      
     };
 
     firebase.initializeApp(firebaseConfig);
