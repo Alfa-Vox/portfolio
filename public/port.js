@@ -79,19 +79,20 @@
 
   if (!userId) return;
 
-  db.collection("portfolios").doc(userId).get()
-    .then(doc => {
-      if (doc.exists) {
-        const userData = doc.data();
-        const theme = userData.theme || "default"; // fallback if no theme
-        applyThemeFile(theme);
-      } else {
-        console.warn("No portfolio document found for user.");
-      }
-    })
-    .catch(err => {
-      console.error("Error loading theme:", err);
-    });
+  db.collection("users").doc(userId).collection("profile").doc("data").get()
+  .then(doc => {
+    if (doc.exists) {
+      const userData = doc.data();
+      const theme = userData.theme || "default";
+      applyThemeFile(theme);
+    } else {
+      console.warn("No profile data found for user.");
+    }
+  })
+  .catch(err => {
+    console.error("Error loading theme:", err);
+  });
+
 }
 
 
